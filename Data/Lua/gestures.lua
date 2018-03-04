@@ -40,7 +40,7 @@ xcsoar.input_event.new("gesture_DR",
 
 xcsoar.input_event.new("gesture_DL",
                                 function(e)
-                                   xcsoar.fire_legacy_event("Setup","Alternates");
+                                   xcsoar.fire_legacy_event("Mode","AbortTask");
                                 end
 )
 
