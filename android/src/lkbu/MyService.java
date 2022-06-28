@@ -1,5 +1,4 @@
-/*
-Copyright_License {
+/* Copyright_License {
 
   XCSoar Glide Computer - http://www.xcsoar.org/
   Copyright (C) 2000-2021 The XCSoar Project
@@ -21,32 +20,17 @@ Copyright_License {
 }
 */
 
-#include "SystemSettings.hpp"
-#include "Asset.hpp"
+package org.xcsoar.lkbu;
 
-void
-SystemSettings::SetDefaults()
-{
-  for (unsigned i = 0; i < devices.size(); ++i)
-    devices[i].Clear();
+/**
+ * Wrapper class to move org.xcsoar.XCSoar forward to package
+ * org.xcsoar.lkbu.
+ */
+public class MyService extends org.xcsoar.MyService {
+  @Override public void onCreate() {
+    if (mainActivityClass == null)
+      mainActivityClass = XCSoar.class;
 
-  if (IsAndroid() || IsApple()) {
-    devices[0].port_type = DeviceConfig::PortType::IOIOUART;
-    devices[0].baud_rate = 115200;
-    devices[0].ioio_uart_id = 0;
-    devices[0].driver_name = _T("IMI ERIXX");
-    devices[1].port_type = DeviceConfig::PortType::IOIOUART;
-    devices[1].baud_rate = 57600;
-    devices[1].ioio_uart_id = 1;
-    devices[1].driver_name = _T("FLARM");    
-  } else {
-    devices[0].port_type = DeviceConfig::PortType::SERIAL;
-#ifdef _WIN32
-    devices[0].path = _T("COM1:");
-#else
-    devices[0].path = _T("/dev/tty0");
-#endif
-    devices[0].baud_rate = 4800;
-    devices[0].driver_name = _T("Generic");
+    super.onCreate();
   }
 }
