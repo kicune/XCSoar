@@ -1777,7 +1777,7 @@ msgstr "GPS zprostředkující ovladač"
 #: src/Device/Config.cpp:272 src/Dialogs/Device/PortDataField.cpp:34
 #, no-c-format
 msgid "Built-in GPS & sensors"
-msgstr "Vestavěné GPS @ sensory"
+msgstr "Vestavěné GPS & sensory"
 
 #: src/Device/Config.cpp:275
 msgid "GliderLink traffic receiver"
@@ -3532,7 +3532,7 @@ msgstr "Konec"
 
 #: src/Dialogs/SimulatorPromptWindow.cpp:90
 msgid "What do you want to do?"
-msgstr "Co chcete udělat?"
+msgstr "Dneska by to šlo..."
 
 #: src/Dialogs/StartupDialog.cpp:138
 msgid "Profile"
