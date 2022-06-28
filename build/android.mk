@@ -64,6 +64,7 @@ NATIVE_HEADERS = $(patsubst %,$(NATIVE_PREFIX)%.h,$(NATIVE_CLASSES))
 
 JAVA_SOURCES := \
 	$(wildcard android/src/*.java) \
+    $(wildcard android/src/lkbu/*.java) \
 	android/UsbSerial/usbserial/src/main/java/com/felhr/deviceids/CH34xIds.java \
 	android/UsbSerial/usbserial/src/main/java/com/felhr/deviceids/CP210xIds.java \
 	android/UsbSerial/usbserial/src/main/java/com/felhr/deviceids/CP2130Ids.java \
@@ -160,7 +161,7 @@ ANDROID_XML_RES_COPIES := $(patsubst android/res/%,$(RES_DIR)/%,$(ANDROID_XML_RE
 ifeq ($(TESTING),y)
 ICON_SVG = $(topdir)/Data/graphics/logo_red.svg
 else
-ICON_SVG = $(topdir)/Data/graphics/logo.svg
+ICON_SVG = $(topdir)/Data/graphics/logo_green.svg
 endif
 
 ICON_WHITE_SVG = $(topdir)/Data/graphics/logo_white.svg
