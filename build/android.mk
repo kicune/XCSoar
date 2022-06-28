@@ -95,7 +95,8 @@ JAVA_SOURCES := \
 	android/ioio/software/IOIOLib/target/android/src/ioio/lib/util/android/ContextWrapperDependent.java \
 	$(wildcard android/ioio/software/IOIOLibAccessory/src/ioio/lib/android/accessory/*.java) \
 	$(wildcard android/ioio/software/IOIOLibBT/src/ioio/lib/android/bluetooth/*.java) \
-	$(wildcard android/ioio/software/IOIOLibAndroidDevice/src/ioio/lib/android/device/*.java)
+	$(wildcard android/ioio/software/IOIOLibAndroidDevice/src/ioio/lib/android/device/*.java) \
+	$(wildcard android/src/lkbu/*.java)
 ifeq ($(TESTING),y)
 	JAVA_SOURCES += $(wildcard android/src/testing/*.java)
 endif
@@ -112,7 +113,7 @@ ANDROID_XML_RES_COPIES := $(patsubst android/res/%,$(RES_DIR)/%,$(ANDROID_XML_RE
 ifeq ($(TESTING),y)
 ICON_SVG = $(topdir)/Data/graphics/logo_red.svg
 else
-ICON_SVG = $(topdir)/Data/graphics/logo.svg
+ICON_SVG = $(topdir)/Data/graphics/logo_green.svg
 endif
 
 ICON_WHITE_SVG = $(topdir)/Data/graphics/logo_white.svg
