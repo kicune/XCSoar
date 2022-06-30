@@ -27,7 +27,7 @@ Copyright_License {
 
 #include <tchar.h>
 
-#define REPOSITORY_URI "http://download.xcsoar.org/repository"
+#define REPOSITORY_URI "https://www.lisak.org/xcsoar/repository/"
 
 static bool repository_downloaded = false;
 

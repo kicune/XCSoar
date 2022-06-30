@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "ZalivkaTest",
+			"path": "../ZalivkaTest"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"filesystem": "cpp",
+			"chrono": "cpp"
+		}
+	}
+}
