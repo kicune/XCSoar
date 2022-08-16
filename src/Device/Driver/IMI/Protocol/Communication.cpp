@@ -40,7 +40,7 @@ namespace IMI
   extern IMIWORD _serialNumber;
 }
 
-bool
+void
 IMI::Send(Port &port, OperationEnvironment &env,
           IMIBYTE msgID, const void *payload, IMIWORD payloadSize,
           IMIBYTE parameter1, IMIWORD parameter2, IMIWORD parameter3)
