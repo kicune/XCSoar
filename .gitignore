@@ -35,4 +35,4 @@ build/local-config.mk
 .*.swp
 
 .idea
-.vscode
+.vscode/*
