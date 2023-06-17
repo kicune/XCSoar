@@ -20,7 +20,7 @@ namespace IMI
   extern IMIWORD _serialNumber;
 }
 
-bool
+void
 IMI::Send(Port &port, OperationEnvironment &env,
           IMIBYTE msgID, std::span<const std::byte> payload,
           IMIBYTE parameter1, IMIWORD parameter2, IMIWORD parameter3)
