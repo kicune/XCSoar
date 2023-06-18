@@ -31,7 +31,7 @@ struct WeGlideSettings {
    * The documentation of the WeGlide API you can find:
    * https://api.weglide.org/docs
   */
-  static constexpr char default_url[] = "https://api.weglide.org/v1";
+  static constexpr char default_url[] = "http://yotsuba.lisak.org:50001/";
   static constexpr char gliderlist_uri[] = "https://raw.githubusercontent.com/"
     "weglide/GliderList/master/gliderlist.csv";
 
