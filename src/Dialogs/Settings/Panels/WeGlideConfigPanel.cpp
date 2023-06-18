@@ -10,7 +10,6 @@
 #include "Form/DataField/Listener.hpp"
 #include "Interface.hpp"
 #include "UIGlobals.hpp"
-#include "LogFile.hpp"
 
 #include <stdio.h>
 
@@ -104,7 +103,6 @@ WeGlideConfigPanel::Save(bool &_changed) noexcept
   changed |= SaveValueInteger(WeGlidePilotID, ProfileKeys::WeGlidePilotID,
                               weglide.pilot_id);
 
-  LogString("Save Birth Date");
   changed |= SaveValue(WeGlidePilotBirthDate,
                        ProfileKeys::WeGlidePilotBirthDate,
                        weglide.pilot_birthdate);
