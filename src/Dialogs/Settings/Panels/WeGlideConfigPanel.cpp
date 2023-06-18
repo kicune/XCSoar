@@ -107,11 +107,11 @@ WeGlideConfigPanel::Save(bool &_changed) noexcept
                        ProfileKeys::WeGlidePilotBirthDate,
                        weglide.pilot_birthdate);
 
-  changed |= SaveValue(WeGlideEnabled, ProfileKeys::WeGlideEnabled,
-                       weglide.enabled);
-
   changed |= SaveValue(WeGlidePassword, ProfileKeys::WeGlidePassword,
-                       weglide.password);                       
+                       weglide.password);
+
+  changed |= SaveValue(WeGlideEnabled, ProfileKeys::WeGlideEnabled,
+                       weglide.enabled);               
 
   _changed |= changed;
 

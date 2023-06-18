@@ -42,6 +42,7 @@ struct WeGlideSettings {
   void SetDefaults() noexcept {
     pilot_id = 0;
     pilot_birthdate.Clear();
+    password = "";
 
     enabled = false;
     automatic_upload = true; // after enabling WeGlide!
