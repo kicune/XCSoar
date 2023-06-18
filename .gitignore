@@ -36,3 +36,4 @@ build/local-config.mk
 .*.swp
 
 .idea
+.vscode/settings.json
