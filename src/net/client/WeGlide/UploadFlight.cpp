@@ -32,7 +32,7 @@ MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
   FormatISO8601(buffer, settings.pilot_birthdate);
   mime.Add("date_of_birth").Data(buffer);
   mime.Add("aircraft_id").Data(fmt::format_int{glider_type}.c_str());
-  mime.Add("password").Data(fmt::format_str{settings.password}.c_str());
+  mime.Add("password").Data(settings.password);
 
   return mime;
 }
