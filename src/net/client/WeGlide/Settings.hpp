@@ -4,6 +4,7 @@
 #pragma once
 
 #include "time/BrokenDate.hpp"
+#include "util/StaticString.hxx"
 
 #include <cstdint>
 
@@ -36,6 +37,7 @@ struct WeGlideSettings {
 
   uint32_t pilot_id;
   BrokenDate pilot_birthdate;
+  StaticString<64> password;
 
   void SetDefaults() noexcept {
     pilot_id = 0;

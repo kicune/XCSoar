@@ -19,6 +19,7 @@ enum ControlIndex {
   WeGlideEnabled,
   WeGlideAutomaticUpload,
   WeGlidePilotID,
+  WeGlidePassword,
   WeGlidePilotBirthDate,
 };
 
@@ -46,6 +47,7 @@ WeGlideConfigPanel::SetEnabled(bool enabled) noexcept
   SetRowEnabled(WeGlideAutomaticUpload, enabled);
   SetRowEnabled(WeGlidePilotBirthDate, enabled);
   SetRowEnabled(WeGlidePilotID, enabled);
+  SetRowEnabled(WeGlidePassword, enabled);
 }
 
 void
@@ -81,6 +83,8 @@ WeGlideConfigPanel::Prepare(ContainerWindow &parent,
 
   AddDate(_("Pilot date of birth"), nullptr,
           weglide.pilot_birthdate);
+  
+  AddPassword(_("CPS password"), _("Pilot's password in CPS"), weglide.password);
 
   SetEnabled(weglide.enabled);
 }
@@ -105,6 +109,9 @@ WeGlideConfigPanel::Save(bool &_changed) noexcept
 
   changed |= SaveValue(WeGlideEnabled, ProfileKeys::WeGlideEnabled,
                        weglide.enabled);
+
+  changed |= SaveValue(WeGlidePassword, ProfileKeys::WeGlidePassword,
+                       weglide.password);                       
 
   _changed |= changed;
 

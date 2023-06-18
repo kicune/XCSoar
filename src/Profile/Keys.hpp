@@ -80,6 +80,7 @@ constexpr char InputFile[] = "InputFile"; // pL
 constexpr char PilotName[] = "PilotName";
 constexpr char WeGlideEnabled[] = "WeGlideEnabled";
 constexpr char WeGlidePilotID[] = "WeGlidePilotID";
+constexpr char WeGlidePassword[] = "WeGlidePassword";
 constexpr char WeGlidePilotBirthDate[] = "WeGlidePilotBirthDate";
 constexpr char WeGlideAircraftType[] = "WeGlideAircraftType";
 constexpr char WeGlideAutomaticUpload[] = "WeGlideAutomaticUpload";
