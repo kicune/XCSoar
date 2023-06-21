@@ -15,6 +15,7 @@
 #include "system/Path.hpp"
 #include "util/StaticString.hxx"
 #include "LogFile.hpp"
+#include "Plane/Plane.hpp"
 
 #include <fmt/format.h>
 
@@ -42,14 +43,14 @@ MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
 Co::Task<boost::json::value>
 UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
              uint_least32_t glider_type,
-             const TCHAR *aircraft_registration,
+             Plane &plane,
              Path igc_path,
              ProgressListener &progress)
 {
   NarrowString<0x200> url(settings.default_url);
   url += "/igcfile";
 
-  LogFormat(_T("Registration %s"), aircraft_registration);
+  LogFormat(_T("Registration %s"), plane.registration);
 
   CurlEasy easy{url};
   Curl::Setup(easy);
