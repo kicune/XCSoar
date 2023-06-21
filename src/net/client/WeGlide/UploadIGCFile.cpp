@@ -99,7 +99,7 @@ UploadSuccessDialog(const FlightData &flight_data) noexcept
 
 static Co::InvokeTask
 UploadFlight(Path igc_path, const WeGlideSettings &settings,
-             uint_least32_t glider_id, const TCHAR *aircraft_registration, ProgressListener &progress,
+             uint_least32_t glider_id, ProgressListener &progress,
              boost::json::value &value_r)
 {
   value_r = co_await UploadFlight(*Net::curl, settings, glider_id, aircraft_registration,
@@ -119,7 +119,7 @@ UploadFile(Path igc_path)
   if (!ShowCoDialog(UIGlobals::GetMainWindow(), UIGlobals::GetDialogLook(),
                     _("Upload Flight"),
                     UploadFlight(igc_path, settings,
-                                 glider_id, aircraft_registration, env, value),
+                                 glider_id, env, value),
                     &env))
     return {};
 
