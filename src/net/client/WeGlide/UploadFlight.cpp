@@ -49,7 +49,7 @@ UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
   NarrowString<0x200> url(settings.default_url);
   url += "/igcfile";
 
-  LogFormat(_T("Registration %s"), plane.registration);
+  LogFormat(_T("Registration %s"), plane.registration.c_str());
 
   CurlEasy easy{url};
   Curl::Setup(easy);
