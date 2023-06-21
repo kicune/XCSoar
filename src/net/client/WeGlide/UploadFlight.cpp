@@ -14,6 +14,7 @@
 #include "system/ConvertPathName.hpp"
 #include "system/Path.hpp"
 #include "util/StaticString.hxx"
+#include "lib/fmt/tchar.hxx"
 #include "LogFile.hpp"
 
 #include <fmt/format.h>
@@ -22,7 +23,7 @@ namespace WeGlide {
 
 static CurlMime
 MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
-                     uint_least32_t glider_type, 
+                     uint_least32_t glider_type, const TCHAR *registration,
                      Path igc_path)
 {
   CurlMime mime{easy};
@@ -33,7 +34,7 @@ MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
   FormatISO8601(buffer, settings.pilot_birthdate);
   mime.Add("date_of_birth").Data(buffer);
   mime.Add("aircraft_id").Data(fmt::format_int{glider_type}.c_str());
-  //mime.Add("aircraft_registration").Data(aircraft_registration);
+  mime.Add("aircraft_registration").Data(registration);
   mime.Add("password").Data(settings.password);
 
   return mime;
@@ -49,14 +50,12 @@ UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
   NarrowString<0x200> url(settings.default_url);
   url += "/igcfile";
 
-  LogFormat(_T("Registration %s"), plane.registration.c_str());
-
   CurlEasy easy{url};
   Curl::Setup(easy);
   const Net::ProgressAdapter progress_adapter{easy, progress};
 
   const auto mime = MakeUploadFlightMime(easy.Get(), settings,
-                                         glider_type, igc_path);
+                                         glider_type, plane.registration, igc_path);
   easy.SetMimePost(mime.get());
 
   Json::ParserOutputStream parser;
