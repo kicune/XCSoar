@@ -21,7 +21,7 @@ namespace WeGlide {
 
 static CurlMime
 MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
-                     uint_least32_t glider_type,
+                     uint_least32_t glider_type, 
                      Path igc_path)
 {
   CurlMime mime{easy};
