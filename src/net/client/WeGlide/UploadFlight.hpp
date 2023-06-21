@@ -19,6 +19,7 @@ namespace WeGlide {
 Co::Task<boost::json::value>
 UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
              uint_least32_t glider_type,
+             const TCHAR *aircraft_registration,
              Path igc_path,
              ProgressListener &progress);
 
