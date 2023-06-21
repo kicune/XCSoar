@@ -607,10 +607,7 @@ DeviceDescriptor::AutoReopen(OperationEnvironment &env)
       !ShouldReopen() ||
       /* attempt to reopen a failed device every 30 seconds */
       !reopen_clock.CheckUpdate(std::chrono::seconds(30)))
-    return;
-
-  TCHAR buffer[64];
-  
+    return;  
 
   InputEvents::processGlideComputer(GCE_COMMPORT_RESTART);
   Reopen(env);
