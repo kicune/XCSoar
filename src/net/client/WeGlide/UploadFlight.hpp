@@ -4,6 +4,7 @@
 #pragma once
 
 #include "co/Task.hxx"
+#include "Plane/Plane.hpp"
 
 #include <boost/json/fwd.hpp>
 

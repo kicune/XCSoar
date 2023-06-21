@@ -15,7 +15,6 @@
 #include "system/Path.hpp"
 #include "util/StaticString.hxx"
 #include "LogFile.hpp"
-#include "Plane/Plane.hpp"
 
 #include <fmt/format.h>
 
