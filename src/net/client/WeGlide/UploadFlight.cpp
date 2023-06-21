@@ -32,7 +32,7 @@ MakeUploadFlightMime(CURL *easy, const WeGlideSettings &settings,
   FormatISO8601(buffer, settings.pilot_birthdate);
   mime.Add("date_of_birth").Data(buffer);
   mime.Add("aircraft_id").Data(fmt::format_int{glider_type}.c_str());
-  mime.Add("aircraft_registration").Data(aircraft_registration);
+  //mime.Add("aircraft_registration").Data(aircraft_registration);
   mime.Add("password").Data(settings.password);
 
   return mime;
@@ -53,7 +53,7 @@ UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
   const Net::ProgressAdapter progress_adapter{easy, progress};
 
   const auto mime = MakeUploadFlightMime(easy.Get(), settings,
-                                         glider_type, aircraft_registration, igc_path);
+                                         glider_type, igc_path);
   easy.SetMimePost(mime.get());
 
   Json::ParserOutputStream parser;
