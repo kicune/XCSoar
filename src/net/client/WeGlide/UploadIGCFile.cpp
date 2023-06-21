@@ -102,7 +102,7 @@ UploadFlight(Path igc_path, const WeGlideSettings &settings,
              uint_least32_t glider_id, ProgressListener &progress,
              boost::json::value &value_r)
 {
-  value_r = co_await UploadFlight(*Net::curl, settings, glider_id, aircraft_registration,
+  value_r = co_await UploadFlight(*Net::curl, settings, glider_id,
                                   igc_path, progress);
 }
 
