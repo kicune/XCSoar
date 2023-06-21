@@ -14,6 +14,7 @@
 #include "system/ConvertPathName.hpp"
 #include "system/Path.hpp"
 #include "util/StaticString.hxx"
+#include "LogFile.hpp"
 
 #include <fmt/format.h>
 
@@ -47,6 +48,8 @@ UploadFlight(CurlGlobal &curl, const WeGlideSettings &settings,
 {
   NarrowString<0x200> url(settings.default_url);
   url += "/igcfile";
+
+  LogFormat(_T("Registration %s"), aircraft_registration);
 
   CurlEasy easy{url};
   Curl::Setup(easy);

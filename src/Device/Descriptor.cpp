@@ -610,7 +610,7 @@ DeviceDescriptor::AutoReopen(OperationEnvironment &env)
     return;
 
   TCHAR buffer[64];
-  LogFormat(_T("Reconnecting to device %s"), config.GetPortName(buffer, 64));
+  
 
   InputEvents::processGlideComputer(GCE_COMMPORT_RESTART);
   Reopen(env);
