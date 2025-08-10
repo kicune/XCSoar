@@ -223,7 +223,7 @@ MainWindow::InitialiseConfigured()
 
   LogFmt("Calling Initialise from InitialiseConfigured");
   LogFmt("Custom dpi: {}", CommonInterface::GetUISettings().custom_dpi);
-  if ((ui_settings.scale != 100) || (ui_settings.info_boxes.scale_title_font != 100))
+  if ((ui_settings.scale != 100) || (ui_settings.info_boxes.scale_title_font != 100)|| (ui_settings.custom_dpi != 0))
     /* call Initialise() again to reload fonts with the new scale */
     Initialise();
 
