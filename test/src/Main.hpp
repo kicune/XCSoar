@@ -245,6 +245,7 @@ WinMain([[maybe_unused]] HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevIn
 #endif
 
   ScreenGlobalInit screen_init;
+  LogFmt("Calling Initialise from Main");
   // Layout::Initialise(screen_init.GetDisplay(), window_size);
   Layout::Initialise(screen_init.GetDisplay(), window_size,
                      CommonInterface::GetUISettings().GetPercentScale(),
