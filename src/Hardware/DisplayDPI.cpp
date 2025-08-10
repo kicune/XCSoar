@@ -120,9 +120,11 @@ Display::GetDPI([[maybe_unused]] const UI::Display &display, unsigned custom_dpi
   if (forced_dpi.x > 0 && forced_dpi.y > 0)
     return forced_dpi;
 #endif
+  
+LogFmt("custom dpi={}", custom_dpi);
 
   if (custom_dpi) {
-      LogFmt("custom dpi={}", custom_dpi);
+
       return {custom_dpi, custom_dpi};
   }
     
