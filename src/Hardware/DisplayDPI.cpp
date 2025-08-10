@@ -5,6 +5,7 @@
 #include "ui/dim/Size.hpp"
 #include "ui/display/Display.hpp"
 #include "Math/Point2D.hpp"
+#include "LogFile.hpp"
 
 #ifdef KOBO
 #include "Kobo/Model.hpp"
@@ -120,8 +121,11 @@ Display::GetDPI([[maybe_unused]] const UI::Display &display, unsigned custom_dpi
     return forced_dpi;
 #endif
 
-  if (custom_dpi)
-    return {custom_dpi, custom_dpi};
+  if (custom_dpi) {
+      LogFmt("custom dpi={}", custom_dpi);
+      return {custom_dpi, custom_dpi};
+  }
+    
 
 #ifdef HAVE_DPI_DETECTION
   if (detected_dpi.x > 0 && detected_dpi.y > 0)
