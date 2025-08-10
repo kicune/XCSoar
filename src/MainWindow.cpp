@@ -198,6 +198,7 @@ MainWindow::Create(PixelSize size, UI::TopWindowStyle style)
 void
 MainWindow::Initialise()
 {
+  LogFmt("Calling Initialise from MainWindow");
   Layout::Initialise(GetDisplay(), GetSize(),
                      CommonInterface::GetUISettings().GetPercentScale(),
                      CommonInterface::GetUISettings().custom_dpi);
