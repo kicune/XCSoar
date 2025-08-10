@@ -106,8 +106,8 @@ Profile::Load(const ProfileMap &map, UISettings &settings)
   map.Get(ProfileKeys::MenuTimeout, settings.menu_timeout);
 
   map.Get(ProfileKeys::UIScale, settings.scale);
-  if (settings.scale < 50 || settings.scale > 200)
-    settings.scale = 100;
+  //if (settings.scale < 50 || settings.scale > 00)
+  //  settings.scale = 100;
 
   map.Get(ProfileKeys::CustomDPI, settings.custom_dpi);
   if (settings.custom_dpi < 120 || settings.custom_dpi > 520)
