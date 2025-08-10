@@ -218,8 +218,10 @@ MainWindow::Initialise()
 void
 MainWindow::InitialiseConfigured()
 {
+  
   const UISettings &ui_settings = CommonInterface::GetUISettings();
 
+  LogFmt("Calling Initialise from InitialiseConfigured");
   if ((ui_settings.scale != 100) || (ui_settings.info_boxes.scale_title_font != 100))
     /* call Initialise() again to reload fonts with the new scale */
     Initialise();
