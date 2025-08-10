@@ -6,6 +6,7 @@
 #include "ui/display/Display.hpp"
 #include "Hardware/DisplayDPI.hpp"
 #include "Asset.hpp"
+#include "LogFile.hpp"
 
 #include <algorithm>
 
@@ -70,6 +71,8 @@ void
 Initialise(const UI::Display &display, PixelSize new_size,
            unsigned ui_scale, unsigned custom_dpi) noexcept
 {
+  LogFmt("Initialise: custom dpi={}", custom_dpi);
+
   const unsigned width = new_size.width, height = new_size.height;
 
   min_screen_pixels = std::min(width, height);
