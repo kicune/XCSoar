@@ -245,7 +245,10 @@ WinMain([[maybe_unused]] HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevIn
 #endif
 
   ScreenGlobalInit screen_init;
-  Layout::Initialise(screen_init.GetDisplay(), window_size);
+  // Layout::Initialise(screen_init.GetDisplay(), window_size);
+  Layout::Initialise(screen_init.GetDisplay(), window_size,
+                     CommonInterface::GetUISettings().GetPercentScale(),
+                     CommonInterface::GetUISettings().custom_dpi);
   InitialiseFonts();
 #endif
 
